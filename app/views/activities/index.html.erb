@@ -1,2 +1,19 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/activities/index.html.erb</p>
+<div class="activities-index-container">
+  <div class="row justify-content-center">
+    <div class="col-6 m-2">
+      <h1>Activities</h1>
+      <button type="button" class="btn btn-success"><%= link_to "Create a new Activity", new_activity_path %></button>
+      <div class="container m-4">
+        <% @activities.each do |activity| %>
+          <div class="card-product m-2 p-2">
+            <img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
+            <div class="card-product-infos">
+              <h2><%= link_to activity.title, activity_path(activity) %></h2>
+              <p><%= activity.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
