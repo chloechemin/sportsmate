@@ -6,12 +6,17 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @activity = Activity.find(params[:activity_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @activity = Activity.find(params[:activity_id])
+    @booking.activity = @activity
+    @booking.user = current_user
+    @booking.status = "Not confirmed"
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to activity_path(@activity)
     else
       render :new
     end
