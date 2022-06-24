@@ -14,16 +14,14 @@
           <li class="nav-item search">
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"  class="btn default"><i class="fa fa-search"></i></button>
-
           <li class="nav-item active">
             <%= link_to "My Dashboard", pages_path(), class: "nav-link" %>
           </li>
           <li class="nav-item username">
-            UserName
-
+            <%= current_user.username %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "/assets/avatar.png", width: "100px", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "/assets/avatar.png", width: "100px", alt: "current_user.username", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", "#", class: "dropdown-item" %>
               <%= link_to "Settings", "#", class: "dropdown-item" %>
