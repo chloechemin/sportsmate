@@ -1,0 +1,11 @@
+<%= search_form_for(@query, url: search_path, method: :get, class: 'd-flex') do |f| %>
+  <%= f.search_field :description_or_title_i_cont_any,
+    placeholder: "Search...",
+    class: "form-control me-2"%>
+  <%= f.submit  class:"fa fa-search" %>
+<% end %>
+
+<%#
+<input type="text" placeholder="Search.." name="search">
+    <button type="submit"  class="btn default">
+    <i class="fa fa-search"></i></button> %>

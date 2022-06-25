@@ -10,6 +10,11 @@ class BookingsController < ApplicationController
     @activity = Activity.find(params[:activity_id])
   end
 
+  def show
+    @activity = Activity.find(params[:activity_id])
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
@@ -18,19 +23,25 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "Not confirmed"
     if @booking.save
-      redirect_to activity_path(@activity)
+      redirect_to activity_booking_path(@activity, @booking)
     else
       render :new
     end
   end
 
-  # def show
-  #   @booking = Booking.find(params[:id])
-  # end
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to activities_path
+  end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :status, :spots_required, :user_id, :activity_id)
+    params.require(:booking).permit(:start_time, :end_time, :status, :spots_required, :user_id, :activity_id, :booking_id)
   end
 end

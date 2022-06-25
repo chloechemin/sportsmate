@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  before_action :set_query
+
+  def set_query
+    @query = Activity.ransack(params[:id])
+  end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb

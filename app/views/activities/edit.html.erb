@@ -9,9 +9,9 @@
           <%= f.input :location %>
           <%= f.input :price, input_html: { min: '0', step: '1' } %>
           <%= f.input :group_size, input_html: { min: '1', max: '25' }%>
-          <%= f.submit "Edit my Activity", class: "btn btn-primary" %>
+          <%= f.submit "Save", class:"btn btn-success" %>
           <%= f.button :button do %>
-            <button type="button" class="btn btn-danger"><%= link_to "Back to Activities", activities_path %></button>
+            <button type="button" class="btn btn-success"><%= link_to "Back to Activities", activities_path %></button>
         <% end %>
       <% end %>
     </div>
