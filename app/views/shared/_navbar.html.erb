@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to activities_path() do %>
-      <img src="/assets/sportsmate.png" width="100px" >
+      <%= image_tag "sportsmate.png", alt: "Sportsmate", width: 100 %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <%= image_tag "/assets/avatar.png", width: "100px", alt: "current_user.username", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "avatar.png", width: "100px", alt: "current_user.username", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", "#", class: "dropdown-item" %>
               <%= link_to "Settings", "#", class: "dropdown-item" %>
