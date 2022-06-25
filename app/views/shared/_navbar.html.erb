@@ -11,15 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item search">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"  class="btn default"><i class="fa fa-search"></i></button>
+          <%= render 'search/form' %>
+
           <li class="nav-item active">
             <%= link_to "My Dashboard", pages_path(), class: "nav-link" %>
           </li>
+
           <li class="nav-item username">
             <%= current_user.username %>
           </li>
+
           <li class="nav-item dropdown">
             <%= image_tag "/assets/avatar.png", width: "100px", alt: "current_user.username", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
