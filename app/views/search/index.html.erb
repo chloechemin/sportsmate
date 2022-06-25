@@ -17,12 +17,11 @@
     <tbody>
       <% @activities.each do |activity|  %>
         <tr>
-          <td><%= link_to activity.title, activity %></td>
+          <td><%= link_to activity.title.capitalize(), activity %></td>
           <td><%= activity.description.truncate_words(25) %></td>
           <td><%= activity.location %></td>
           <td><%= activity.level %></td>
-          <td></td>
-          <%# <td><%= @users[activity.user_id][:username]</td> %>
+          <td><%= link_to @users[activity.user_id].username.capitalize(), "#"%></td>
           <td><%= activity.price  %></td>
           <td><%= activity.group_size  %></td>
         </tr>
