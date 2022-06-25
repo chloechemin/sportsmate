@@ -9,6 +9,7 @@
       <p><%= @activity.location %></p>
       <p>$<%= @activity.price %></p>
       <p><%= @activity.group_size %></p>
+      <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
     </div>
   </div>
 </div>
