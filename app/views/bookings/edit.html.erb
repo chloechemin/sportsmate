@@ -6,9 +6,9 @@
         <%= f.input :start_time, :as => :datetime %>
         <%= f.input :end_time, :as => :datetime %>
         <%= f.input :spots_required, input_html: { min: '1', max: '25' }%>
-        <%= f.submit "Book", class: "btn btn-primary" %>
+        <%= f.submit "Book", class:"btn btn-success" %>
         <%= f.button :button do %>
-          <button type="button" class="btn btn-danger"><%= link_to "Back to the activity", root_path %></button>
+          <button type="button" class="btn btn-success"><%= link_to "Back to the activity", root_path %></button>
         <% end %>
       <% end %>
     </div>
