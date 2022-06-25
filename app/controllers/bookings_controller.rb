@@ -6,11 +6,13 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
     @activity = Activity.find(params[:activity_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @activity = Activity.find(params[:activity_id])
     @booking.activity = @activity
     @booking.user = current_user
