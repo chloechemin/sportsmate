@@ -4,12 +4,13 @@
       <%=@activity.title%>
     </div>
     <div class="col-6 m-2 p-2">
-      <p><%= @activity.description %></p>
-      <p><%= @activity.level %></p>
-      <p><%= @activity.location %></p>
-      <p>$<%= @activity.price %></p>
-      <p><%= @activity.group_size %></p>
+      <p >Description : <%=  @activity.description %></p>
+      <p>Level : <%= @activity.level %></p>
+      <p>Location : <%= @activity.location %></p>
+      <p>Price : $<%= @activity.price %></p>
+      <p>Group size : <%= @activity.group_size %></p>
       <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
+      <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_path(@activity) %></button>
     </div>
   </div>
 </div>
