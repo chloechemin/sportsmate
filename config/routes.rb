@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :activities, only: [:index, :new, :show, :create, :edit, :update] do
-    resources :bookings, only: [:show, :new, :create, :destroy] do
-    end
+    resources :bookings, only: [:show, :new, :create, :destroy]
   end
   resources :bookings, only: [] do
-    patch :accept
-    patch :decline
+    member do
+      patch :accept
+      patch :decline
+    end
   end
 end
 
