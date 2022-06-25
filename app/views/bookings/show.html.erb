@@ -1,2 +1,19 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="activity-show-container">
+  <div class="row justify-content-center">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?)<%=@booking.activity.title %>">
+      <p>Thanks for your booking</p>
+    </div>
+    <div class="col-6 m-2 p-2">
+      <h2><%=@booking.activity.title%></h2>
+      <p><%= @booking.activity.description %></p>
+      <p><%= @booking.activity.level %></p>
+      <br>
+      <p>You've booked for <strong><%= @booking.spots_required %> person </strong></p>
+      <p>Let's meet here: <%= @booking.activity.location %></p>
+      <p>$<%= @booking.activity.price %></p>
+      <p>From <%= @booking.start_time %></p>
+      <p>To <%= @booking.end_time%></p>
+      <p><%= @booking.status %> by the organiser</p>
+    </div>
+  </div>
+</div>
