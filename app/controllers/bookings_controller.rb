@@ -10,12 +10,6 @@ class BookingsController < ApplicationController
     @activity = Activity.find(params[:activity_id])
   end
 
-  def show
-    @activity = Activity.find(params[:activity_id])
-    @booking = Booking.find(params[:id])
-    authorize @booking
-  end
-
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
@@ -29,6 +23,28 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "Confirmed"
+    @booking.save
+      redirect_to activity_booking_path([@booking.activity, @booking])
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "Not confirmed"
+    @booking.save
+      redirect_to activity_booking_path([@booking.activity, @booking])
+  end
+
 
   def edit
     @booking = Booking.find(params[:id])

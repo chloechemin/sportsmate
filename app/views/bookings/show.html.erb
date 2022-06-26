@@ -1,3 +1,7 @@
+
+<%= link_to "Accept", accept_booking_path(@booking), class: "btn btn-primary", method: "patch" %>
+<%= link_to "Decline", decline_booking_path(@booking), class: "btn btn-primary", method: "patch" %>
+
 <div class="activity-show-container">
   <div class="row justify-content-center">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?)<%=@booking.activity.title %>">
@@ -16,7 +20,7 @@
       <p><%= @booking.status %> by the organiser</p>
       <br>
       <% if policy(@booking).edit? %>
-        <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_booking_path(@activity) %></button>
+        <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_booking_path(@booking) %></button>
       <% end %>
     </div>
   </div>
