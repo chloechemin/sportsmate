@@ -10,7 +10,9 @@
       <p>Price : $<%= @activity.price %></p>
       <p>Group size : <%= @activity.group_size %></p>
       <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
-      <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_path(@activity) %></button>
+      <% if policy(@activity).edit? %>
+        <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_path(@activity) %></button>
+      <% end %>
     </div>
   </div>
 </div>

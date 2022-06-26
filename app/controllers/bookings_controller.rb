@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
   def show
     @activity = Activity.find(params[:activity_id])
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def create
@@ -31,12 +32,15 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @activity = Activity.find(params[:activity_id])
+    authorize @booking
   end
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.update(booking_params)
-    redirect_to activities_path
+    redirect_to activity_booking_path
   end
 
   private
