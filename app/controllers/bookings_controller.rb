@@ -35,14 +35,18 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "Confirmed"
     @booking.save
-      redirect_to activity_booking_path([@booking.activity, @booking])
+    redirect_to activity_booking_path([@booking.activity, @booking])
+    skip_policy_scope
+    skip_authorization
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = "Not confirmed"
     @booking.save
-      redirect_to activity_booking_path([@booking.activity, @booking])
+    redirect_to activity_booking_path([@booking.activity, @booking])
+    skip_policy_scope
+    skip_authorization
   end
 
 
@@ -57,6 +61,13 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.update(booking_params)
     redirect_to activity_booking_path
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    authorize @booking
+    redirect_to activities_path
   end
 
   private
