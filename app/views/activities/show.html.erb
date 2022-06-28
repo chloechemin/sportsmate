@@ -1,24 +1,41 @@
-<div class="activity-show-container">
-  <div class="row justify-content-center">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%=@activity.title %>)">
-      <%=@activity.title%>
+<div class="container">
+  <div class="flex-container">
+    <div class="flex-item">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%=@activity.title %>)">
+      </div>
     </div>
-    <div class="col-6 m-2 p-2">
-      <p >Description : <%=  @activity.description %></p>
-      <p>Level : <%= @activity.level %></p>
-      <p>Location : <%= @activity.location %></p>
-      <p>Price : $<%= @activity.price %></p>
-      <p>Group size : <%= @activity.group_size %></p>
-      <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
-      <% if policy(@activity).edit? %>
-        <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_path(@activity) %></button>
-      <% end %>
-       <% if policy(@activity).destroy? %>
-        <button type="button" class="btn btn-danger"><%=link_to "Delete",
-            activity_path(@activity),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></button>
-       <% end %>
-    </div>
+    <div class="flex-item">
+      <div class="activity-show-container">
+        <div class="row justify-content-center align-center">
+          <div class="content">
+            <div class="col-18 m-2 p-2">
+              <div class="title">
+                <h1><%=@activity.title.upcase %></h1>
+                <h4>by <%=@activity.user.username.capitalize %></h4>
+              </div>
+              <div class= "descrition">
+                <p><%=  @activity.description %></p>
+              </div>
+              <div class= "details">
+                <p>Level : <%= @activity.level %></p>
+                <p>Location : <%= @activity.location %></p>
+                <p>Price : $<%= @activity.price %></p>
+                <p>Group size : <%= @activity.group_size %></p>
+              </div>
+              <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
+              <% if policy(@activity).edit? %>
+                <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_path(@activity) %></button>
+              <% end %>
+              <% if policy(@activity).destroy? %>
+                <button type="button" class="btn btn-danger"><%=link_to "Delete",
+                    activity_path(@activity),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %></button>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

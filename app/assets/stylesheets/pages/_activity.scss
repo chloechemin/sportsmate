@@ -1,0 +1,63 @@
+.container {
+margin: 0;
+padding: 0;
+  // position: relative
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  height: 93vh
+}
+
+.flex-item {
+  margin: 0;
+  padding: 0;
+  flex: 0 0 50%;
+  width: 100vh;
+}
+
+.card-category {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.activity-show-container {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  display:flex;
+  justify-content: center;
+  position: absolute;
+}
+.align-center {
+  align-self: center;
+}
+
+.content {
+padding-left: 40%;
+padding-top: 20%;
+width: 400px;
+}
+
+h1 {
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+h4  {
+  font-style: italic;
+  font-size: 20px;
+  padding-top: 0px;
+}
+
+.title {
+padding-bottom: 0px;
+}
