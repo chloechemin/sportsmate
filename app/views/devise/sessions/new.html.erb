@@ -1,7 +1,8 @@
 <div class="log-in-container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-    <h2>Log in</h2>
+  <div class="flex-item-1">
+    <h1>PLAY BY YOUR RULES</h1>
+  </div>
+    <div class="flex-item-2">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -16,10 +17,8 @@
 
         <div class="form-actions">
           <%= f.button :submit, "Log in" %>
-        </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
-    </div>
+          <% end %>
+          <%= render "devise/shared/links" %>
+      </div>
   </div>
 </div>

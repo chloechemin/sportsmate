@@ -1,0 +1,103 @@
+.log-in-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-item-1 {
+  background: #E5E5E5;
+  position: absolute;
+  width: 726px;
+  height: 869px;
+  left: 0px;
+  top: 134px;
+  justify-content: center;
+  display: flex;
+  margin-top: -78px;
+
+    h1{
+      font-family: $montserrat;
+      color: #261D40;
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 98px;
+      letter-spacing: 0em;
+      text-align: left;
+      align-self: center;
+      width: 473.169189453125px;
+      left: 126.9228515625px;
+      top: 245px;
+      border-radius: nullpx;
+    }
+}
+
+.flex-item-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 462px;
+  height: 611px;
+  left: 857px;
+  top: 242px;
+
+    .form-label {
+      margin-bottom: 0.5rem;
+      font-family: $montserrat;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 37px;
+      color: #000000;
+    }
+
+    .form-control {
+      background: #E5E5E5;
+    }
+
+    .form-check-label{
+      font-family: $montserrat;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      text-align: center;
+      color: #000000;
+    }
+
+    .form-check-input {
+      width: 21px;
+      height: 21px;
+      background-color: #E5E5E5;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-around;
+
+      .btn {
+        font-family: $montserrat;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        text-align: center;
+
+        color: #EEA2A2;
+        border: solid;
+        border-radius: 25px;
+      }
+
+      // a {
+      //   font-family: 'Montserrat';
+      //   font-style: normal;
+      //   font-weight: 400;
+      //   font-size: 25px;
+      //   line-height: 30px;
+      //   text-align: center;
+
+      //   color: #EEA2A2;
+      //   border: solid;
+      //   border-radius: 25px;
+      // }
+    }
+}
