@@ -1,10 +1,10 @@
-.container {
+#container-activity-page {
 margin: 0;
 padding: 0;
   // position: relative
 }
 
-.flex-container {
+.flex-container-activity {
   display: flex;
   justify-content: space-around;
   margin: 0;
@@ -12,7 +12,7 @@ padding: 0;
   height: 93vh
 }
 
-.flex-item {
+.flex-item-activity {
   margin: 0;
   padding: 0;
   flex: 0 0 50%;
@@ -41,13 +41,13 @@ padding: 0;
   align-self: center;
 }
 
-.content {
+.content_activity {
 padding-left: 35%;
 padding-top: 20%;
 width: 600px;
 }
 
-h1 {
+.title h1 {
   font-weight: 900;
   margin-bottom: 0;
 }
