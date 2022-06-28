@@ -11,16 +11,29 @@
             <div class="col-18 m-2 p-2">
               <div class="title">
                 <h1><%=@activity.title.upcase %></h1>
-                <h4>by <%=@activity.user.username.capitalize %></h4>
+                <a class="username_link" href="">by <%=@activity.user.username.capitalize %></a>
               </div>
-              <div class= "descrition">
+              <div class= "descrition pt-3">
                 <p><%=  @activity.description %></p>
               </div>
-              <div class= "details">
-                <p>Level : <%= @activity.level %></p>
-                <p>Location : <%= @activity.location %></p>
-                <p>Price : $<%= @activity.price %></p>
-                <p>Group size : <%= @activity.group_size %></p>
+                <div class= "details pt-3">
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/level_icon.png", width: "40px", height: "40px", alt: "Level", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1"> <%= @activity.level %></p>
+                  </div>
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/people_icon.png", width: "40px", height: "40px", alt: "People", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1"> up to <%= @activity.group_size %> people</p>
+                  </div>
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/price_icon.png", width: "40px", height: "40px", alt: "Price", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1">$<%= @activity.price %>/per hr</p>
+                  </div>
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/location_icon.png", width: "40px", height: "40px", alt: "Location", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1"><%= @activity.location %></p>
+                  </div>
+                </div>
               </div>
               <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
               <% if policy(@activity).edit? %>

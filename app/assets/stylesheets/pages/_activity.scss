@@ -42,9 +42,9 @@ padding: 0;
 }
 
 .content {
-padding-left: 40%;
+padding-left: 35%;
 padding-top: 20%;
-width: 400px;
+width: 600px;
 }
 
 h1 {
@@ -52,12 +52,21 @@ h1 {
   margin-bottom: 0;
 }
 
-h4  {
+.username_link {
   font-style: italic;
   font-size: 20px;
   padding-top: 0px;
+  color: black;
 }
 
 .title {
 padding-bottom: 0px;
+}
+
+.description p {
+  margin-top: 2rem;
+}
+
+.icon {
+  margin-right: 2rem;
 }
