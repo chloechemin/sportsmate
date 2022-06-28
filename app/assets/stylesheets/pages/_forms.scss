@@ -1,12 +1,24 @@
-.log-in-container {
+.main-container {
   display: flex;
   justify-content: space-around;
 }
 
+button a {
+  text-decoration: none;
+}
+
+#activities {
+  background: $pink;
+}
+
+#sign-up {
+  background: $pink;
+}
+
 .flex-item-1 {
-  background: #E5E5E5;
+  background: $grey;
   position: absolute;
-  width: 726px;
+  width: 50%;
   height: 869px;
   left: 0px;
   top: 134px;
@@ -16,7 +28,7 @@
 
     h1{
       font-family: $montserrat;
-      color: #261D40;
+      color: $purple;
       font-size: 80px;
       font-weight: 900;
       line-height: 98px;
@@ -32,13 +44,12 @@
 
 .flex-item-2 {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   position: absolute;
-  width: 462px;
+  width: 50%;
   height: 611px;
-  left: 857px;
-  top: 242px;
+  left: 800px;
+  top: 200px;
 
     .form-label {
       margin-bottom: 0.5rem;
@@ -47,11 +58,15 @@
       font-weight: 700;
       font-size: 30px;
       line-height: 37px;
-      color: #000000;
+      color: $black;
+    }
+
+    .form-select {
+      background-color: $grey;
     }
 
     .form-control {
-      background: #E5E5E5;
+      background: $grey;
     }
 
     .form-check-label{
@@ -61,43 +76,39 @@
       font-size: 25px;
       line-height: 30px;
       text-align: center;
-      color: #000000;
+      color: $black;
     }
 
     .form-check-input {
       width: 21px;
       height: 21px;
-      background-color: #E5E5E5;
+      background-color: $grey;
     }
 
     .form-actions {
       display: flex;
       justify-content: space-around;
 
-      .btn {
+      .btn , a{
         font-family: $montserrat;
         font-style: normal;
         font-weight: 400;
-        font-size: 25px;
+        font-size: 18px;
         line-height: 30px;
         text-align: center;
-
-        color: #EEA2A2;
+        color: $pink;
         border: solid;
         border-radius: 25px;
+        padding: 10px;
+        margin: 5px;
+        transition: 1s;
+        text-decoration: none;
       }
 
-      // a {
-      //   font-family: 'Montserrat';
-      //   font-style: normal;
-      //   font-weight: 400;
-      //   font-size: 25px;
-      //   line-height: 30px;
-      //   text-align: center;
-
-      //   color: #EEA2A2;
-      //   border: solid;
-      //   border-radius: 25px;
-      // }
+      .btn:hover, a:hover {
+        background-color: #EEA2A9;
+        color: $white;
+        transition: 1s;
+      }
     }
 }
