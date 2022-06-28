@@ -14,7 +14,7 @@
       <br>
       <p>You've booked for <strong><%= @booking.spots_required %> person </strong></p>
       <p>Let's meet here: <%= @booking.activity.location %></p>
-      <p>$<%= @booking.activity.price %></p>
+      <p>$<%= @booking.activity.price * @booking.spots_required %></p>
       <p>From <%= @booking.start_time %></p>
       <p>To <%= @booking.end_time%></p>
       <p><%= @booking.status %> by the organiser</p>

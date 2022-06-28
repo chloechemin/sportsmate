@@ -1,7 +1,8 @@
-<div class="form-container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <h1>Edit your activity:</h1>
+<div class="main-container">
+  <div id="activities" class="flex-item-1">
+    <h1>THAT'S A GAME CHANGER</h1>
+  </div>
+    <div class="flex-item-2">
         <%= simple_form_for @activity do |f| %>
           <%= f.input :title %>
           <%= f.input :description %>
@@ -9,11 +10,10 @@
           <%= f.input :location %>
           <%= f.input :price, input_html: { min: '0', step: '1' } %>
           <%= f.input :group_size, input_html: { min: '1', max: '25' }%>
-          <%= f.submit "Save", class:"btn btn-success" %>
+          <%= f.submit "Save", class:"btn btn-primary" %>
           <%= f.button :button do %>
-            <button type="button" class="btn btn-success"><%= link_to "Back to Activities", activities_path %></button>
+            <button type="button" class="btn btn-danger"><%= link_to "Back to Activities", activities_path %></button>
         <% end %>
       <% end %>
-    </div>
   </div>
 </div>

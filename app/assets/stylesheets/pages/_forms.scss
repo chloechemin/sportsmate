@@ -1,0 +1,115 @@
+.main-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+button a {
+  text-decoration: none;
+}
+
+#activities {
+  background: $pink;
+}
+
+#sign-up {
+  background: $pink;
+}
+
+.flex-item-1 {
+  background: $grey;
+  position: absolute;
+  width: 50%;
+  height: 869px;
+  left: 0px;
+  top: 134px;
+  justify-content: center;
+  display: flex;
+  margin-top: -78px;
+
+    h1{
+      font-family: $montserrat;
+      color: $purple;
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 98px;
+      letter-spacing: 0em;
+      text-align: left;
+      align-self: center;
+      width: 473.169189453125px;
+      left: 126.9228515625px;
+      top: 245px;
+      border-radius: nullpx;
+    }
+}
+
+.flex-item-2 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 50%;
+  height: 611px;
+  left: 800px;
+  top: 200px;
+
+    .form-label {
+      margin-bottom: 0.5rem;
+      font-family: $montserrat;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 37px;
+      color: $black;
+      text-transform: uppercase;
+    }
+
+    .form-select {
+      background-color: $grey;
+    }
+
+    .form-control {
+      background: $grey;
+    }
+
+    .form-check-label{
+      font-family: $montserrat;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 30px;
+      text-align: center;
+      color: $black;
+    }
+
+    .form-check-input {
+      width: 21px;
+      height: 21px;
+      background-color: $grey;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-around;
+
+      .btn , a{
+        font-family: $montserrat;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+        color: $pink;
+        border: solid;
+        border-radius: 25px;
+        padding: 10px;
+        margin: 5px;
+        transition: 1s;
+        text-decoration: none;
+      }
+
+      .btn:hover, a:hover {
+        background-color: #EEA2A9;
+        color: $white;
+        transition: 1s;
+      }
+    }
+}
