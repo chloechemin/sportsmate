@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'search', to:"search#index"
-  root to: 'activities#index'
+  get 'search', to: "search#index"
+  get 'pages', to: "pages#dashboard"
+  root to: 'pages#landing'
   devise_for :users
   resources :pages, to: 'pages#dashboard'
   resources :activities, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
