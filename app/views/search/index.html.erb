@@ -1,31 +1,51 @@
 <h1 class="text-center"><%= pluralize(@activities.count, "Result") %></h1>
 
-<div class="container">
-  <table class="table table-light table-striped">
-    <thead>
-      <tr>
-        <th><%= sort_link(@query, :title, "Title", defualt_order: :asc) %></th>
-        <th><%= sort_link(@query, :description, "Description") %></th>
-        <th><%= sort_link(@query, :location, "Location") %></th>
-        <th><%= sort_link(@query, :level, "Level") %></th>
-        <th><%= sort_link(@query, :username, "Organiser") %></th>
-        <th><%= sort_link(@query, :username, "Price") %></th>
-        <th><%= sort_link(@query, :username, "Group Size") %></th>
-      </tr>
-    </thead>
 
-    <tbody>
-      <% @activities.each do |activity|  %>
+
+  <div class="container">
+    <table class="table table-light table-striped">
+      <thead>
         <tr>
-          <td><%= link_to activity.title.capitalize(), activity %></td>
-          <td><%= activity.description.truncate_words(25) %></td>
-          <td><%= activity.location %></td>
-          <td><%= activity.level %></td>
-          <td><%= link_to @users[activity.user_id].username.capitalize(), "#"%></td>
-          <td><%= activity.price  %></td>
-          <td><%= activity.group_size  %></td>
+          <th><%= sort_link(@query, :title, "Title", defualt_order: :asc) %></th>
+          <th><%= sort_link(@query, :description, "Description") %></th>
+          <th><%= sort_link(@query, :location, "Location") %></th>
+          <th><%= sort_link(@query, :level, "Level") %></th>
+          <th><%= sort_link(@query, :username, "Organiser") %></th>
+          <th><%= sort_link(@query, :username, "Price") %></th>
+          <th><%= sort_link(@query, :username, "Group Size") %></th>
         </tr>
-      <% end  %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @activities.each do |activity|  %>
+          <tr>
+            <td><%= link_to activity.title.capitalize(), activity %></td>
+            <td><%= activity.description.truncate_words(25) %></td>
+            <td><%= activity.location %></td>
+            <td><%= activity.level %></td>
+            <td><%= link_to @users[activity.user_id - 1].username.capitalize(), "#"%></td>
+            <td><%= activity.price  %></td>
+            <td><%= activity.group_size  %></td>
+          </tr>
+        <% end  %>
+      </tbody>
+    </table>
+  </div>
+
+<div class="container m-4 col-4">
+  <% @activities.each do |activity| %>
+    <div class="card-product m-2 p-2">
+
+      <div class="card-product-infos">
+            <img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
+        <p><strong><%= link_to activity.title.capitalize(), activity %></strong>
+        <br>
+        <%= activity.location %>
+        <br>
+        $<%= activity.price%>/hr
+        <br>
+        More info</p>
+      </div>
+    </div>
+  <% end %>
 </div>
