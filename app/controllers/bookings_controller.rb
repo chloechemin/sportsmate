@@ -6,11 +6,13 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
     @activity = Activity.find(params[:activity_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @activity = Activity.find(params[:activity_id])
     @booking.activity = @activity
     @booking.user = current_user
@@ -25,6 +27,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
 
@@ -32,24 +35,38 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "Confirmed"
     @booking.save
-      redirect_to activity_booking_path([@booking.activity, @booking])
+    redirect_to activity_booking_path([@booking.activity, @booking])
+    skip_policy_scope
+    skip_authorization
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = "Not confirmed"
     @booking.save
-      redirect_to activity_booking_path([@booking.activity, @booking])
+    redirect_to activity_booking_path([@booking.activity, @booking])
+    skip_policy_scope
+    skip_authorization
   end
 
 
   def edit
     @booking = Booking.find(params[:id])
+    @activity = Activity.find(params[:activity_id])
+    authorize @booking
   end
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.update(booking_params)
+    redirect_to activity_booking_path
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
     redirect_to activities_path
   end
 

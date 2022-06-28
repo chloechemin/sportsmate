@@ -1,6 +1,6 @@
 class Activity < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   validates :title, :description, :price, :level, :location, :group_size, presence: true
 
