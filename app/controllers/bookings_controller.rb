@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
-    @activity = Activity.find(params[:activity_id])
+    @activity = @booking.activity
     authorize @booking
   end
 
