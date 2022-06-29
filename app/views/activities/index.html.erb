@@ -1,19 +1,30 @@
+<h1 class="text-center m-20" style="margin-bottom: 20px;margin-top: 100px;"></h1>
+
 <div class="activities-index-container">
   <div class="row justify-content-center">
-    <div class="col-6 m-2">
-      <h1>Activities</h1>
-      <button type="button" class="btn btn-success"><%= link_to "Create a new activity", new_activity_path %></button>
-      <div class="container m-4">
-        <% @activities.each do |activity| %>
-          <div class="card-product m-2 p-2">
-            <img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
-            <div class="card-product-infos">
-              <h2><%= link_to activity.title, activity_path(activity) %></h2>
-              <p><%= activity.description %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
+  <div class="text-center m-20 col-12 " style="background-color:#E5E5E5;height: 200px;margin-bottom: 20px;">
+      <h1 ><strong>THE BALL IS IN YOUR COURT</strong></h1>
+      <p>Your are an expert in a sport and would like to teach the community?
+      <br> Don't sweat it, you can share your talent with the community now!</p>
+      <button type="button" class="btn btn-success" style="background-color:#EEA2A2;border-radius: 40px;"><%= link_to "Create a new activity", new_activity_path %></button>
     </div>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="cards col-sm-6 col-lg-12">
+    <% @activities.each do |activity| %>
+    <div class="card-product">
+      <img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
+        <p><strong><%= link_to activity.title.capitalize(), activity %></strong>
+        <br>
+        <%= activity.location %>
+        <br>
+        $<%= activity.price%>/hr
+        <br>
+        More info
+        </p>
+     </div>
+      <% end %>
   </div>
 </div>
