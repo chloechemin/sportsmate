@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'search', to: "search#index"
-  root to: 'activities#index'
+  get 'search', to:"search#index"
+  root to: 'pages#homepage'
   devise_for :users
   resources :pages, to: 'pages#dashboard'
   # get :bookings, to: 'bookings#index', as: my_bookings
