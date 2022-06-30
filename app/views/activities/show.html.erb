@@ -35,7 +35,9 @@
                   </div>
                 </div>
               </div>
-              <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
+              <% if policy(@activity).book? %>
+                <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
+              <% end %>
               <% if policy(@activity).edit? %>
                 <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_path(@activity) %></button>
               <% end %>
