@@ -1,0 +1,64 @@
+.menu-card-grey {
+  background: $grey;
+  width: 50vw;
+  height: 48vh;
+  left: 0px;
+  justify-content: center;
+  display: flex;
+  padding-top: 8%;
+  margin-bottom: 0px;
+
+  a {
+    font-family: $montserrat;
+    color: $purple;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 98px;
+    letter-spacing: 0em;
+    text-align: left;
+    align-self: center;
+    width: 473.169189453125px;
+    left: 126.9228515625px;
+    top: 245px;
+    border-radius: nullpx;
+    text-decoration: none;
+  }
+}
+
+.menu-card-grey:hover {
+  background: $pink;
+}
+
+.menu-card-white {
+  background: $white;
+  width: 50vw;
+  height: 48vh;
+  left: 0px;
+  justify-content: center;
+  display: flex;
+  padding-top: 8%;
+  margin-bottom: 0px;
+
+  a {
+    font-family: $montserrat;
+    color: $purple;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 98px;
+    letter-spacing: 0em;
+    text-align: left;
+    align-self: center;
+    width: 473.169189453125px;
+    left: 126.9228515625px;
+    top: 245px;
+    border-radius: nullpx;
+    text-decoration: none;
+  }
+}
+
+.menu-card-white:hover {
+
+  a {
+    color: $pink;
+  }
+}
