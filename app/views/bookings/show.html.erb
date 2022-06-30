@@ -2,13 +2,14 @@
   <div class="flex-container-activity">
       <div class="flex-item-activity">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%=@booking.activity.title %>)">
-          <p>Thanks for your booking</p>
+          <p>THANKS FOR YOUR BOOKING</p>
         </div>
+        <p>☺️</p>
       </div>
       <div class="flex-item-activity">
         <div class="activity-show-container">
           <div class="row justify-content-center">
-            <div class="content_activity">
+            <div class="content_booking">
               <div class="col-18 m-2 p-2">
                 <div class="status">
                   <p><%= @booking.status.upcase %> BY <%=@booking.activity.user.username.upcase %></p>

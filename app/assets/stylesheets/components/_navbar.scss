@@ -1,3 +1,8 @@
+.container-navbar {
+  margin: 0;
+  padding: 10px, 20px, 10px, 20px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background-color: white;
@@ -14,4 +19,22 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  color: $purple;
+  font-weight: 500px;
+}
+
+.dropdown-menu {
+  border-radius: 4px;
+}
+
+.search-button {
+height: 30px;
+}
+
+.navigation {
+
+
 }

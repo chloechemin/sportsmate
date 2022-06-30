@@ -82,6 +82,7 @@
   justify-content: space-around;
   align-content: center;
   object-fit: cover;
+
   a {
     color: pink !important;
     text-decoration: none;
@@ -89,6 +90,11 @@
 }
 
 a {
-  color: black;
+  color: $purple;
+  text-decoration: none;
+}
+
+.btn-outline-primary a {
+  color: $pink;
   text-decoration: none;
 }
