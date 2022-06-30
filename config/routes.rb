@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     resources :bookings, only: [:show, :new, :create, :destroy, :edit, :update]
   end
-  resources :bookings, only: [] do
+  resources :bookings, only: [:index] do
     member do
       patch :accept
       patch :decline
