@@ -7,7 +7,7 @@
     <div class="flex-item-activity">
       <div class="activity-show-container">
         <div class="row justify-content-center align-center">
-          <div class="content_activity">
+          <div class="content_booking">
             <div class="col-18 m-2 p-2">
               <div class="title">
                 <h1><%=@activity.title.upcase %></h1>
@@ -36,13 +36,13 @@
                 </div>
               </div>
               <% if policy(@activity).book? %>
-                <button type="button" class="btn btn-success"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
+                <button type="button" class="btn btn-primary"><%= link_to "Book", new_activity_booking_path(@activity) %></button>
               <% end %>
               <% if policy(@activity).edit? %>
-                <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_path(@activity) %></button>
+                <button type="button" class="btn btn-outline-primary"><%= link_to "Edit", edit_activity_path(@activity) %></button>
               <% end %>
               <% if policy(@activity).destroy? %>
-                <button type="button" class="btn btn-danger"><%=link_to "Delete",
+                <button type="button" class="btn-outline-primary><%=link_to "Delete",
                     activity_path(@activity),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %></button>
