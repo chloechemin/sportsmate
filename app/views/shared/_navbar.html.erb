@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top " data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
-  <div class="container-fluid">
+  <div class="container-fluid" style="padding-left:50px;margin-top:20px ">
     <%= link_to activities_path() do %>
       <%= image_tag "sportsmate.png", alt: "Sportsmate", width: 100 %>
     <% end %>
@@ -11,14 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <%= render 'search/form' %>
+          <form class="d-flex" id="activity_search" action="/search" accept-charset="UTF-8" method="get" style="padding-right: 100px;">
+            <%= render 'search/form' %>
+          </form>
 
-          <li class="nav-item active">
-            <%= link_to "My Dashboard", pages_path(), class: "nav-link" %>
+          <li class="nav-item active" style="padding-right: 100px;">
+           <strong><%= link_to "Dashboard", pages_path(), class: "nav-link" %></strong>
           </li>
 
-          <li class="nav-item username">
-            <%= current_user.username %>
+          <li class="nav-item nav-link">
+            <strong><%= current_user.username %></strong>
           </li>
 
           <li class="nav-item dropdown">
@@ -29,6 +31,7 @@
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
+
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>

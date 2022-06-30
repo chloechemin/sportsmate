@@ -1,20 +1,26 @@
 <h1 class="text-center m-20" style="margin-bottom: 20px;margin-top: 150px;"><%= pluralize(@activities.count, "Result") %></h1>
 
-
 <div class="card-container">
-  <div class="cards col-sm-6 col-lg-12">
+  <div class="cards col-sm-6 col-lg-5">
     <% @activities.each do |activity| %>
-    <div class="card-product">
-      <img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
-        <p><strong><%= link_to activity.title.capitalize(), activity %></strong>
-        <br>
-        <%= activity.location %>
-        <br>
-        $<%= activity.price%>/hr
-        <br>
-        More info
-        </p>
-     </div>
+      <div class="card-product" style="display: flex;flex-direction: column;justify-content: space-evenly;">
+
+        <div><img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
+        </div>
+
+        <div style ="text-decoration:none;">
+        <p style="margin-top: 20px">
+          <strong style="text-transform: uppercase;"><%= activity.title.capitalize() %></strong>
+            <br>
+            <%= activity.location %>
+            <br>
+            $<%= activity.price%>/hr
+            <br>
+            <%= link_to "More info", activity_path(activity), class:"btn btn-outline-primary", style:"margin-top: 15px" %>
+            </p>
+          </div>
+
+      </div>
       <% end %>
   </div>
 </div>

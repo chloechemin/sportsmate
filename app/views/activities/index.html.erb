@@ -2,29 +2,40 @@
 
 <div class="activities-index-container">
   <div class="row justify-content-center">
-  <div class="text-center m-20 col-12 " style="background-color:#E5E5E5;height: 200px;margin-bottom: 20px;">
+  <div class="text-center m-20 col-12 " style="background-color:#E5E5E5;height: 250px;margin-bottom: 20px; padding:50px">
+     <div>
       <h1 ><strong>THE BALL IS IN YOUR COURT</strong></h1>
       <p>Your are an expert in a sport and would like to teach the community?
       <br> Don't sweat it, you can share your talent with the community now!</p>
-      <button type="button" class="btn btn-success" style="background-color:#EEA2A2;border-radius: 40px;"><%= link_to "Create a new activity", new_activity_path %></button>
+     </div>
+     <div>
+      <button type="button" class= "btn btn-primary" ><%= link_to "Create a new activity", new_activity_path %></button>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="card-container">
-  <div class="cards col-sm-6 col-lg-12">
+  <div class="cards col-sm-6 col-lg-5">
     <% @activities.each do |activity| %>
-    <div class="card-product">
-      <img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
-        <p><strong><%= link_to activity.title.capitalize(), activity %></strong>
-        <br>
-        <%= activity.location %>
-        <br>
-        $<%= activity.price%>/hr
-        <br>
-        More info
-        </p>
-     </div>
+      <div class="card-product" style="display: flex;flex-direction: column;justify-content: space-evenly;">
+
+        <div><img src="https://source.unsplash.com/random/?<%= activity.title %>"/>
+        </div>
+
+        <div style ="text-decoration:none;">
+        <p style="margin-top: 20px">
+          <strong style="text-transform: uppercase;"><%= activity.title.capitalize() %></strong>
+            <br>
+            <%= activity.location %>
+            <br>
+            $<%= activity.price%>/hr
+            <br>
+            <%= link_to "More info", activity_path(activity), class:"btn btn-outline-primary", style:"margin-top: 15px" %>
+            </p>
+          </div>
+
+      </div>
       <% end %>
   </div>
 </div>
