@@ -20,4 +20,8 @@ class ActivityPolicy < ApplicationPolicy
   def destroy?
     user == record.user
   end
+
+  def book?
+    user != record.user
+  end
 end
