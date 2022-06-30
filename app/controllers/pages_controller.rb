@@ -3,6 +3,5 @@ class PagesController < ApplicationController
 
   def dashborad
     redirect_to activities_path()
-
   end
 end
