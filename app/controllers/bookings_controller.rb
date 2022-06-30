@@ -1,10 +1,8 @@
 class BookingsController < ApplicationController
 
-  def index
-    # @user = current_user
-    @bookings = policy_scope(Booking)
-
-  end
+  # def index
+  #   @booking = Booking.all
+  # end
 
   def new
     @activity = Activity.find(params[:activity_id])
@@ -71,13 +69,6 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to activities_path
   end
-
-  # def my_bookings
-  #   @user = current_user
-  #   @bookings = user.bookings
-  #   @owner_bookings = Booking.where(activity: activity)
-  #   @my_bookings = Booking.where(user: current_user)
-  # end
 
   private
 
