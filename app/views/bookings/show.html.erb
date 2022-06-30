@@ -1,33 +1,58 @@
-
-<%= link_to "Accept", accept_booking_path(@booking), class: "btn btn-primary", method: "patch" %>
-<%= link_to "Decline", decline_booking_path(@booking), class: "btn btn-primary", method: "patch" %>
-
 <div class="activity-show-container">
-  <div class="row justify-content-center">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?)<%=@booking.activity.title %>">
-      <p>Thanks for your booking</p>
-    </div>
-    <div class="col-6 m-2 p-2">
-      <h2><%=@booking.activity.title%></h2>
-      <p><%= @booking.activity.description %></p>
-      <p><%= @booking.activity.level %></p>
-      <br>
-      <p>You've booked for <strong><%= @booking.spots_required %> person </strong></p>
-      <p>Let's meet here: <%= @booking.activity.location %></p>
-      <p>$<%= @booking.activity.price %></p>
-      <p>From <%= @booking.start_time %></p>
-      <p>To <%= @booking.end_time%></p>
-      <p><%= @booking.status %> by the organiser</p>
-      <br>
-      <% if policy(@booking).edit? %>
-        <button type="button" class="btn btn-success"><%= link_to "Edit", edit_activity_booking_path(@booking) %></button>
-      <% end %>
-      <% if policy(@booking).destroy? %>
-        <button type="button" class="btn btn-danger"><%=link_to "Cancel",
-            activity_booking_path(@booking),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></button>
-       <% end %>
+  <div class="flex-container-activity">
+      <div class="flex-item-activity">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%=@booking.activity.title %>)">
+          <p>Thanks for your booking</p>
+        </div>
+      </div>
+      <div class="flex-item-activity">
+        <div class="activity-show-container">
+          <div class="row justify-content-center">
+            <div class="content_activity">
+              <div class="col-18 m-2 p-2">
+                <div class="status">
+                  <p><%= @booking.status.upcase %> BY <%=@booking.activity.user.username.upcase %></p>
+                </div>
+                <div class="title">
+                  <h1>YOUR <%=@booking.activity.title.upcase %> CLASS</h1>
+                  <a class="username_link" href="">with <%=@booking.activity.user.username.capitalize %></a>
+                </div>
+                <div class= "details pt-4">
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/price_icon.png", width: "40px", height: "40px", alt: "Price", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1">$<%= @booking.activity.price %>/per hr</p>
+                  </div>
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/location_icon.png", width: "40px", height: "40px", alt: "Location", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1"><%= @booking.activity.location %></p>
+                  </div>
+                </div>
+                <div class= "details pt-3">
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/calendar_icon.png", width: "40px", height: "40px", alt: "Calendar", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1">From <%= @booking.start_time.to_time.strftime('%B %e at %l:%M %p')%></p>
+                  </div>
+                  <div class= "d-flex pb-1">
+                    <%= image_tag "icons/people_icon.png", width: "40px", height: "40px", alt: "Spots", class: "icon" %>
+                    <p class="flex-grow text-left pt-2 mb-1"><%= @booking.spots_required %> people</p>
+                  </div>
+                </div>
+                <br>
+                <br>
+                  <% if policy(@booking).edit? %>
+                    <button type="button" class="btn btn-outline-primary"><%= link_to "Edit", edit_activity_booking_path(@booking) %></button>
+                  <% end %>
+                  <% if policy(@booking).destroy? %>
+                    <button type="button" class="btn btn-outline-primary"><%=link_to "Cancel",
+                        activity_booking_path(@booking),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %></button>
+                  <% end %>
+                <%= link_to "Accept", accept_booking_path(@booking), class: "btn btn-primary", method: "patch" %>
+                <%= link_to "Decline", decline_booking_path(@booking), class: "btn btn-outline-primary", method: "patch" %>
+              </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>

@@ -1,16 +1,16 @@
-<div class="form-container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <h1>Edit your booking:</h1>
-        <%= simple_form_for [ @activity, @booking ] do |f| %>
-        <%= f.input :start_time, :as => :datetime %>
-        <%= f.input :end_time, :as => :datetime %>
-        <%= f.input :spots_required, input_html: { min: '1', max: '25' }%>
-        <%= f.submit "Book", class:"btn btn-success" %>
-        <%= f.button :button do %>
-          <button type="button" class="btn btn-success"><%= link_to "Back to the activity", root_path %></button>
-        <% end %>
+<div class="main-container">
+  <div id="activities" class="flex-item-1">
+    <h1>THAT'S A GAME CHANGER </h1>
+  </div>
+    <div class="flex-item-2">
+      <%= simple_form_for [ @activity, @booking ] do |f| %>
+      <%= f.input :start_time, :as => :datetime %>
+      <%= f.input :end_time, :as => :datetime %>
+      <%= f.input :spots_required, input_html: { min: '1', max: @activity.group_size }%>
+      <%= f.submit "Book", class:"btn btn-primary" %>
+      <%= f.button :button do %>
+        <button type="button" class="btn btn-danger"><%= link_to "Back to the activity", root_path %></button>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>

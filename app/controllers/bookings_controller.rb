@@ -1,19 +1,19 @@
 class BookingsController < ApplicationController
 
-  # def index
-  #   @booking = Booking.all
-  # end
+  def index
+    @bookings = policy_scope(Booking)
+  end
 
   def new
+    @activity = Activity.find(params[:activity_id])
     @booking = Booking.new
     authorize @booking
-    @activity = Activity.find(params[:activity_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    authorize @booking
     @activity = Activity.find(params[:activity_id])
+    authorize @booking
     @booking.activity = @activity
     @booking.user = current_user
     @booking.status = "Not confirmed"
@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
-    @activity = Activity.find(params[:activity_id])
+    @activity = @booking.activity
     authorize @booking
   end
 
