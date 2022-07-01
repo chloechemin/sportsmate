@@ -1,6 +1,42 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1494177310973-4841f7d5a882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);">
-  <div class="container">
+<div id="homepage">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1494177310973-4841f7d5a882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);">
     <%# <%= image_tag "homepage/banner_background.png", alt: "Banner", class: "image_banner" %>
-    <h1>LET'S PLAY <strong>FOOTBALL</strong></h1>
+    <div class="homepage-navbar d-flex justify-content-between">
+      <%= image_tag "sportsmate-white.png", alt: "Sportsmate-white", width: 161 %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    </div>
+    <h1>LET'S PLAY <strong><span class="pink-text" data-controller="typed-js"></span></strong></h1>
+  </div>
+  <div class="main-container">
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-row justify-content-around">
+        <div class="homepage-card-content">
+          <div class="content_homepage">
+            <h2>SPORT SPORT SPORT</h2>
+            <p>There's a breathless hush in the Close to-night.
+            Ten to make and the match to win. A bumping pitch and a blinding light, An hour to play and the last man in.</p>
+            <p>And it's not for the sake of a ribboned coat,
+            Or the selfish hope of a season's fame,
+            But his Captain's hand on his shoulder smote. 'Play up! play up! and play the game!'' - Henry Newbolt, 'Vitai Lampada'</p>
+          </div>
+        </div>
+        <div class="homepage-card-headline">
+          <h1>GET THE BALL ROLLING</h1>
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-around">
+        <div class="homepage-card-headline basket">
+        </div>
+        <div class="homepage-card-content">
+          <div class="content_homepage">
+            <h2>FUN FUN FUN</h2>
+            <p>When my thoughts are too heavy, My feelings too numb, When my heart is unsteady, And the tears start to come,
+            I put on my running shoes. Tonight I can't hide. I pace myself, breathing, Letting go with every stride.</p>
+            <p>The melody of my footsteps, The rhythm of my breaths, Have synchronized into nothing; A calm stillness inside my head.
+            I'm light as a feather. I let myself fly. The world is a blur, but tonight ... I'm alive. - Innarenko, 'Alive'</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
