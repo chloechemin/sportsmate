@@ -11,7 +11,7 @@
 .banner h1 {
   margin: 0;
   padding-top: 100px;
-  color: $grey;
+  color: $pink;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: 900;
   font-size: 80px;
@@ -69,4 +69,26 @@
   background-position: center;
   -webkit-filter: grayscale(70%);
   filter: grayscale(70%);
+}
+
+.pink-text {
+  color: $grey;
+}
+
+.homepage-navbar {
+    position: absolute;
+    right: 50px;
+    left: 50px;
+    top: 30px;
+}
+
+.homepage-navbar {
+  a {
+    color: $grey;
+    font-weight: 500;
+  }
+  img {
+    height: 30px;
+    width: auto;
+  }
 }

@@ -1,8 +1,12 @@
-<div class="page">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1494177310973-4841f7d5a882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);">
-      <%# <%= image_tag "homepage/banner_background.png", alt: "Banner", class: "image_banner" %>
-      <h1>LET'S PLAY <strong>FOOTBALL</strong></h1>
+<div id="homepage">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1494177310973-4841f7d5a882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);">
+    <%# <%= image_tag "homepage/banner_background.png", alt: "Banner", class: "image_banner" %>
+    <div class="homepage-navbar d-flex justify-content-between">
+      <%= image_tag "sportsmate-white.png", alt: "Sportsmate-white", width: 161 %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </div>
+    <h1>LET'S PLAY <strong><span class="pink-text" data-controller="typed-js"></span></strong></h1>
+  </div>
   <div class="main-container">
     <div class="d-flex flex-column">
       <div class="d-flex flex-row justify-content-around">
