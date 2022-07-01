@@ -1,19 +1,17 @@
-.content_activity {
-  padding-left: 20%;
-  padding-top: 5%;
+.content_booking {
+  padding-left: 15%;
+  padding-top: 8%;
   width: 600px;
   }
 
-  .status {
+.status {
     font-style: italic;
     color: $pink;
   }
 
-
-.secondary-button-booking {
-
-  a {
-  color: $pink;
-  border: solid 2px;
-}
-}
+  .card-category p {
+    color: $grey;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-weight: 900;
+    font-size: 30px;
+  }
