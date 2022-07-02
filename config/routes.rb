@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#homepage'
 
   devise_for :users
-  resources :pages, to: 'pages#dashboard'
-  resources :pages, to: 'pages#my_bookings'
+  get '/pages', to: 'pages#dashboard', as: :dashboard
+  get '/pages/my_bookings', to: 'pages#my_bookings', as: :my_bookings
+  get '/pages/my_activities', to: 'pages#my_activities', as: :my_activities
   resources :activities, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
 
     resources :bookings, only: [:index, :show, :new, :create, :destroy, :edit, :update]
