@@ -34,7 +34,17 @@
 height: 30px;
 }
 
-.navigation {
 
+.search-button-icon .input-group-text {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-top: 4px;
 
+  i {
+    text-align: center;
+    font-size: 12px;
+    color: $purple;
+  }
 }
+

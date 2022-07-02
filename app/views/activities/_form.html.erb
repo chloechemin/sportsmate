@@ -3,6 +3,7 @@
     <h1>PLAY BY YOUR RULES</h1>
   </div>
     <div class="flex-item-2">
+      <div class="details-form pd-2 mb-4">
         <%= simple_form_for(@activity) do |f| %>
           <%= f.input :title %>
           <%= f.input :description %>
@@ -12,8 +13,9 @@
           <%= f.input :group_size, input_html: { min: '1', max: '25' }%>
           <%= f.submit "Create Activity", class: "btn btn-primary" %>
           <%= f.button :button do %>
-          <button type="button" class="btn btn-danger"><%= link_to "Back to Activities", activities_path %></button>
+          <button type="button" class="btn btn-outline-primary"><%= link_to "Back to Activities", activities_path %></button>
         <% end %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
 </div>
