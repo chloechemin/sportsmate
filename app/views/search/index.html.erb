@@ -1,7 +1,7 @@
-<h1 class="text-center m-20" style="margin-bottom: 20px;margin-top: 150px;"><%= pluralize(@activities.count, "Result") %></h1>
+<h1 class="text-center m-20" style="margin-bottom: 20px;"><%= pluralize(@activities.count, "Result") %></h1>
 
 <div class="card-container">
-  <div class="cards col-sm-6 col-lg-5">
+  <div class="cards col-sm-6 col-lg-10">
     <% @activities.each do |activity| %>
       <div class="card-product" style="display: flex;flex-direction: column;justify-content: space-evenly;">
 
