@@ -1,8 +1,10 @@
 <%= search_form_for(@query, url: search_path, method: :get, class: 'd-flex') do |f| %>
   <%= f.search_field :description_or_title_i_cont_any,
     placeholder: "Search...",
-    class: "search-button form-control m-2"%>
+    class: "search-button form-control m-2 p-2"%>
+    <div class="search-button-icon">
   <%= button_tag(class:"input-group-text border-0") do %>
      <i class="fas fa-search"></i>
   <% end %>
+  </div>
 <% end %>
