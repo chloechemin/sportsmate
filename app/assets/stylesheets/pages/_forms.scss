@@ -9,6 +9,9 @@ button a {
 
 #activities {
   background: $pink;
+  position: fixed;
+  top: 150px;
+  left: 0;
 }
 
 #sign-up {
@@ -112,4 +115,9 @@ button a {
         transition: 1s;
       }
     }
+}
+
+#new_activity {
+  padding-bottom: 80px;
+  margin-bottom: 150px;
 }
