@@ -25,7 +25,7 @@ Activity.create(title: "Ballet", description: Faker::TvShows::Simpsons.quote, lo
 Activity.create(title: "Running", description: Faker::Quote.most_interesting_man_in_the_world, location: "Keilor Park", price: 35, group_size: 8, level: "Advance", user_id: 7)
 Activity.create(title: "Swimming", description: Faker::TvShows::Simpsons.quote, location: "St Kilda beach", price: 110, group_size: 4, level: "Beginner", user_id: 8)
 Activity.create(title: "Badminton", description: Faker::Quote.most_interesting_man_in_the_world, location: "Wonderland Park", price: 95, group_size: 4, level: "Intermediate", user_id: 10)
-Activity.create(title: "Trekking", description: FFaker::TvShows::Simpsons.quote, location: "Botanical Garden", price: 15, group_size: 30, level: "Advance", user_id: 4)
+Activity.create(title: "Trekking", description: Faker::TvShows::Simpsons.quote, location: "Botanical Garden", price: 15, group_size: 30, level: "Advance", user_id: 4)
 Activity.create(title: "Netball", description: Faker::TvShows::Simpsons.quote, location: "Brunswick Park", price: 25, group_size: 16, level: "Beginner", user_id: 5)
 Activity.create(title: "Hockey", description: Faker::TvShows::Simpsons.quote, location: "Mornington Peninsula", price: 38, group_size: 10, level: "Intermediate", user_id: 1)
 Activity.create(title: "Horse riding", description: Faker::TvShows::Simpsons.quote, location: "Flemington Racecourse", price: 85, group_size: 2, level: "Beginner", user_id: 5)
