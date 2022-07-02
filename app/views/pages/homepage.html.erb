@@ -3,7 +3,7 @@
     <%# <%= image_tag "homepage/banner_background.png", alt: "Banner", class: "image_banner" %>
     <div class="homepage-navbar d-flex justify-content-between">
       <%= image_tag "sportsmate-white.png", alt: "Sportsmate-white", width: 161 %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <%= link_to "Browse", activities_path, class: "nav-link" %>
     </div>
     <h1>LET'S PLAY <strong><span class="pink-text" data-controller="typed-js"></span></strong></h1>
   </div>
@@ -20,7 +20,7 @@
             But his Captain's hand on his shoulder smote. 'Play up! play up! and play the game!'' - Henry Newbolt, 'Vitai Lampada'</p>
           </div>
         </div>
-        <div class="homepage-card-headline">
+        <div class="homepage-card-headline" style="padding-top: 0px">
           <h1>GET THE BALL ROLLING</h1>
         </div>
       </div>
@@ -39,4 +39,20 @@
       </div>
     </div>
   </div>
+
+  <div class="footer">
+  <div class="footer-logo">
+    <%= image_tag "sportsmate.png", alt: "Sportsmate-white", width: 161 %>
+  </div>
+  <div class="footer-team">
+    <ul class="no-bullets">
+    <li><h2>TEAM BORRO</h2></li>
+      <li><p>Anuth Hatharasinghe</p></li>
+      <li><p>Chichi Luan</p></li>
+      <li><p>Francesca Mo</p></li>
+      <li><p>Chloe Chemin</p></li>
+    </ul>
+  </div>
+</div>
+
 </div>

@@ -1,4 +1,4 @@
-<h1 class="text-center m-20" style="margin-bottom: 20px;margin-top: 100px;"></h1>
+<h1 class="text-center m-20" style="margin-bottom: 20px;"></h1>
 
 <div class="activities-index-container">
   <div class="row justify-content-center">
@@ -16,7 +16,7 @@
 </div>
 
 <div class="card-container">
-  <div class="cards col-sm-6 col-lg-5">
+  <div class="cards col-sm-6 col-lg-10">
     <% @activities.each do |activity| %>
       <div class="card-product" style="display: flex;flex-direction: column;justify-content: space-evenly;">
 
@@ -37,5 +37,20 @@
 
       </div>
       <% end %>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">
+    <%= image_tag "sportsmate.png", alt: "Sportsmate-white", width: 161 %>
+  </div>
+  <div class="footer-team">
+    <ul class="no-bullets">
+    <li><h2>TEAM BORRO</h2></li>
+      <li><p>Anuth Hatharasinghe</p></li>
+      <li><p>Chichi</p></li>
+      <li><p>Francesca Mo</p></li>
+      <li><p>Chloe Chemin</p></li>
+    </ul>
   </div>
 </div>

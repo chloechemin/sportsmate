@@ -9,7 +9,7 @@
         <%= f.input :spots_required, input_html: { min: '1', max: @activity.group_size  }%>
         <%= f.submit "Book", class:"btn btn-primary" %>
         <%= f.button :button do %>
-          <button type="button" class="btn btn-danger"><%= link_to "Back to the activity", root_path %></button>
+          <button type="button"  class="btn btn-outline-primary"><%= link_to "Back to the activity", activity_path(@activity) %></button>
         <% end %>
       <% end %>
     </div>

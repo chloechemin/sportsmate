@@ -1,8 +1,8 @@
-<div class= "container-navbar">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+<div class= "container-navbar" style="display: unset">
+  <div class="position-sticky sticky-top navbar navbar-expand-sm navbar-light navbar-lewagon " data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
     <div class="container-fluid" style="padding-left:80px;margin-top:20px;padding-right:80px ">
       <%= link_to activities_path() do %>
-        <%= image_tag "sportsmate.png", alt: "Sportsmate", width: 100 %>
+        <%= image_tag "sportsmate.png", alt: "Sportsmate", width: 150 %>
       <% end %>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,11 +17,15 @@
             </form>
 
             <li class="nav-item active" style="padding-right: 20px;">
-            <%= link_to "Dashboard", dashboard_path(), class: "nav-link" %>
+
+            <strong><%= link_to "Dashboard", pages_path(), class: "nav-link" %></strong>
+
             </li>
 
             <li class="nav-item nav-link">
+
             <p>Hi, <%= current_user.username.capitalize %></p>
+
             </li>
 
             <li class="nav-item dropdown">
