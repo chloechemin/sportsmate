@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @activity = Activity.find(params[:activity_id])
   end
 
   def new

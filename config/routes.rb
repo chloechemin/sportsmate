@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  get 'search', to:"search#index"
+  get 'search', to: "search#index"
   root to: 'pages#homepage'
   devise_for :users
   resources :pages, to: 'pages#dashboard'
+  resources :pages, to: 'pages#my_bookings'
   resources :activities, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
 
-    resources :bookings, only: [:show, :new, :create, :destroy, :edit, :update]
+    resources :bookings, only: [:index, :show, :new, :create, :destroy, :edit, :update]
   end
   resources :bookings, only: [:index] do
     member do

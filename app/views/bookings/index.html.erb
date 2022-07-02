@@ -1,3 +1,31 @@
-<%= @bookings.each do |booking| %>
-<%= booking.status %>
-<% end %>
+
+<div class="main-container">
+  <div id="my_booking" class="flex-item-1" >
+    <h1>SOME YOU WIN, SOME YOU WIN</h1>
+  </div>
+  <div class="flex-item-2">
+    <div class="card-container">
+      <div class="cards col-sm-6 col-lg-5">
+          <div style ="text-decoration:none;">
+            <p style="margin-top: 20px">
+                <% @bookings.each do |booking| %>
+                  <div><img src="https://source.unsplash.com/random/?<%= @activity.title %>"
+                  width="300"
+                  height="200"/>
+                  </div>
+                 <strong><%= @activity.title.capitalize() %>
+                </strong>
+                <p><%= booking.activity.location %></p>
+                <p>$<%= booking.activity.price %>/hr</p>
+                <% end %>
+            </p>
+          </div>
+        </div>
+
+
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+
+      </div>
+    </div>
+  </div>
+</div>
