@@ -1,0 +1,31 @@
+<div class="main-container">
+  <div id="my_booking" class="flex-item-1" >
+    <h1>SOME YOU WIN, SOME YOU WIN</h1>
+  </div>
+  <div class="flex-item-2">
+    <div class="card-container">
+      <div class="cards col-sm-6 col-lg-5">
+          <div style ="text-decoration:none;">
+            <p style="margin-top: 20px">
+                <% @bookings.each do |booking| %>
+                  <div class="grey-scale"><img src="https://source.unsplash.com/random/?<%= booking.activity.title %>"
+                  width="300"
+                  height="200"/>
+                  </div>
+                 <strong><%= booking.activity.title.capitalize() %>
+                </strong>
+                <p><%= booking.activity.location %></p>
+                <p>$<%= booking.activity.price %>/hr</p>
+                <% end %>
+                <%# <button type="button" class="btn btn-outline-primary"><%= link_to "More Info", activity_booking_path([@booking.activity, @booking]) %>
+            </p>
+          </div>
+        </div>
+
+
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+
+      </div>
+    </div>
+  </div>
+</div>

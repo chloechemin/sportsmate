@@ -1,3 +1,32 @@
-<%= @bookings.each do |booking| %>
-<%= booking.status %>
-<% end %>
+
+<div class="main-container">
+  <div id="my_booking" class="flex-item-1" >
+    <h1>SOME YOU WIN, SOME YOU WIN</h1>
+  </div>
+  <div class="flex-item-2">
+    <div class="cards">
+          <div style ="text-decoration:none;">
+            <p style="margin-top: 20px">
+                <% @bookings.each do |booking| %>
+                  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?headshot)"
+                  width="500">
+                  </div>
+                   <%= booking.user.username.capitalize() %>
+                <p><%= booking.start_time.strftime('%B %e at %l:%M %p') %></p>
+                <p><%= booking.spots_required %> People</p>
+
+                 <%= link_to "Accept", accept_booking_path(booking), class: "btn btn-primary", method: "patch" %>
+                <%= link_to "Decline", decline_booking_path(booking), class: "btn btn-outline-primary", method: "patch" %>
+
+                <% end %>
+            </p>
+          </div>
+        </div>
+
+
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+
+      </div>
+    </div>
+  </div>
+</div>

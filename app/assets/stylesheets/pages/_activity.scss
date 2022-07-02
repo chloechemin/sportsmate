@@ -70,3 +70,11 @@ padding-bottom: 0px;
 .icon {
   margin-right: 2rem;
 }
+
+.grey-scale {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
