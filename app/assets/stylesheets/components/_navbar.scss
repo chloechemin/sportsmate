@@ -1,8 +1,17 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.container-navbar {
+  margin: 0;
+  padding: 10px, 20px, 10px, 20px;
 }
 
+.navbar-lewagon {
+  justify-content: space-between;
+  background-color: white;
+  transition: 0.5s bacground-color ease;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 
@@ -10,4 +19,30 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  color: $purple;
+  font-weight: 500px;
+}
+
+.dropdown-menu {
+  border-radius: 4px;
+}
+
+.search-button {
+height: 30px;
+}
+
+.search-button-icon .input-group-text {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-top: 4px;
+
+  i {
+    text-align: center;
+    font-size: 12px;
+    color: $purple;
+  }
 }

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'search', to: "search#index"
   root to: 'pages#homepage'
+
   devise_for :users
   resources :pages, to: 'pages#dashboard'
   resources :pages, to: 'pages#my_bookings'

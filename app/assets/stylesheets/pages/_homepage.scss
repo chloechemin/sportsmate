@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  width: 100vw;
   -webkit-filter: grayscale(70%);
   filter: grayscale(70%);
   padding: 180px 0;
@@ -10,9 +11,84 @@
 .banner h1 {
   margin: 0;
   padding-top: 100px;
-  color: $grey;
+  color: $pink;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: 900;
-  font-size: 60px;
+  font-size: 80px;
   text-align: center;
+}
+
+.homepage-card-content {
+  margin: 0;
+  padding: 0;
+  height: 93vh;
+  width: 50%;
+}
+
+.content_homepage {
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-top: 35%;
+
+  h2 {
+    font-weight: 800;
+    font-size: 28px;
+    padding-bottom: 20px;
+    color: $purple;
+  }
+  }
+
+.homepage-card-headline {
+  background: $grey;
+  width: 50vw;
+  height: 100vh;
+  left: 0px;
+  justify-content: center;
+  display: flex;
+  padding-top: 6%;
+  margin-bottom: 0px;
+
+  h1 {
+    font-family: $montserrat;
+    color: $purple;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 98px;
+    letter-spacing: 0em;
+    text-align: left;
+    align-self: center;
+    width: 473.169189453125px;
+    left: 126.9228515625px;
+    top: 245px;
+    }
+}
+
+.basket {
+  background-image: url(https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
+}
+
+.pink-text {
+  color: $grey;
+}
+
+.homepage-navbar {
+    position: absolute;
+    right: 50px;
+    left: 50px;
+    top: 30px;
+}
+
+.homepage-navbar {
+  a {
+    color: $grey;
+    font-weight: 500;
+  }
+  img {
+    height: 30px;
+    width: auto;
+  }
 }
